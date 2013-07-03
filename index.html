@@ -52,7 +52,7 @@
     }
 	
 	    function showConfirm() {
-        navigator.notification.alert(
+        navigator.notification.confirm(
             'You are the winner!',  // message
             alertDismissed,         // callback
             'Game Over',            // title
@@ -61,7 +61,7 @@
     }
 	
 	    function showPrompt() {
-        navigator.notification.alert(
+        navigator.notification.prompt(
             'You are the winner!',  // message
             alertDismissed,         // callback
             'Game Over',            // title
@@ -70,7 +70,7 @@
     }
 	
 	    function showBeep() {
-        navigator.notification.alert(
+        navigator.notification.beep(
             'You are the winner!',  // message
             alertDismissed,         // callback
             'Game Over',            // title
@@ -79,7 +79,7 @@
     }
 	
 	    function showVibrate() {
-        navigator.notification.alert(
+        navigator.notification.vibrate(
             'You are the winner!',  // message
             alertDismissed,         // callback
             'Game Over',            // title
@@ -95,6 +95,6 @@
 	<p><a href="#" onclick="showPrompt(); return false;">Show Alert</a></p>
 	<p><a href="#" onclick="showBeep(); return false;">Show Alert</a></p>
 	<p><a href="#" onclick="showVibrate(); return false;">Show Alert</a></p>
-	<p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+	<p><a href="#" onclick="window.setInterval(showAlert(),3000)">Show Alert</a></p>
   </body>
 </html>
