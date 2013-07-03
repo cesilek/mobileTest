@@ -50,10 +50,51 @@
             'Done'                  // buttonName
         );
     }
+	
+	    function showConfirm() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+	
+	    function showPrompt() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+	
+	    function showBeep() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+	
+	    function showVibrate() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
 
     </script>
   </head>
   <body>
     <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+	<p><a href="#" onclick="showConfirm(); return false;">Show Alert</a></p>
+	<p><a href="#" onclick="showPrompt(); return false;">Show Alert</a></p>
+	<p><a href="#" onclick="showBeep(); return false;">Show Alert</a></p>
+	<p><a href="#" onclick="showVibrate(); return false;">Show Alert</a></p>
+	<p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
   </body>
 </html>
