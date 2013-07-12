@@ -1,28 +1,19 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Notification Example</title>
+	<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Mobilní webová aplikace jQuery</title>
+    
+    <link href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/screen.css" rel="stylesheet" type="text/css">
+    
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+    <script src="script.js" type="text/javascript"></script>
 
-    <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+    
     <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -35,66 +26,89 @@
         // Empty
     }
 
-    // alert dialog dismissed
-        function alertDismissed() {
-            // do something
-        }
 
-    // Show a custom alertDismissed
-    //
-    function showAlert() {
-        navigator.notification.alert(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-    }
-	
-	    function showConfirm() {
-        navigator.notification.confirm(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-    }
-	
-	    function showPrompt() {
-        navigator.notification.prompt(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-    }
-	
-	    function showBeep() {
-        navigator.notification.beep(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-    }
-	
-	    function showVibrate() {
-        navigator.notification.vibrate(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-    }
 
     </script>
   </head>
   <body>
-    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
-	<p><a href="#" onclick="showConfirm(); return false;">Show Alert</a></p>
-	<p><a href="#" onclick="showPrompt(); return false;">Show Alert</a></p>
-	<p><a href="#" onclick="showBeep(); return false;">Show Alert</a></p>
-	<p><a href="#" onclick="showVibrate(); return false;">Show Alert</a></p>
-	<p><a href="#" onclick="window.setInterval(showAlert(),3000)">Show Alert</a></p>
+   
+<div data-role="page" id="login" class="center">
+	<div data-role="header" data-theme="e">
+        <img class="logo" src="img/logo.png">
+		<h1>Login</h1>
+	</div>
+	<div data-role="content">	
+			<div data-role="fieldcontain">
+                <input type="email" name="textinput" id="textinput" value="" placeholder="Email" />
+                <input type="password" name="textinput" id="textinput" value="" placeholder="Heslo" />                
+                <div>
+                    <a href="#registration" data-role="button" data-inline="true">Registrovat</a>
+                    <a href="#feed" data-role="button" class="ui-btn-right" data-inline="true">Login</a>
+                </div>
+		 	</div>
+        
+		
+	</div>
+    <div data-role="footer">
+		<a href="#feed">Feed</a>
+	</div>
+</div>
+    
+<div data-role="page" id="registration" class="center">
+	<div data-role="header" data-theme="e">
+        <img class="logo" src="img/logo.png">
+		<h1>Login</h1>
+	</div>
+	<div data-role="content">	
+			<div data-role="fieldcontain">
+                <input type="email" name="email" id="textinput" value="" placeholder="Email" />
+                <input type="password" name="password" id="textinput" value="" placeholder="Heslo" />
+                <input type="password" name="password-again" id="textinput" value="" placeholder="Heslo znovu" />
+                <input type="tel" name="phone" id="textinout" value="" placeholder="Telefon" />
+                <div>
+                    <a href="#registration" data-role="button" data-inline="true">Registrovat</a>
+                    <a href="#feed" data-role="button" class="ui-btn-right" data-inline="true">Login</a>
+                </div>
+		 	</div>
+        
+		
+	</div>
+    <div data-role="footer">
+		<a href="#feed">Feed</a>
+	</div>
+</div>
+
+<div data-role="page" id="feed">
+	<div data-role="header" data-theme="e">
+        <img class="logo" src="img/logo.png">
+		<h1>Feed</h1>
+        <a href="#menu" data-role="button" style="float:right" class="ui-btn-right" data-icon="gear" data-iconpos="notext">settings</a>
+	</div>
+    <input type="search" name="search" id="search-basic" placeholder="Název firmy, jméno osoby nebo IČO" value="" />
+    
+	<div data-role="content">
+        <div data-role="navbar" data-type="horizontal">
+            <ul>
+                <li><a href="">dodavatel</a></li>
+                <li><a href="">zákazník</a></li>
+                <li><a href="">partner</a></li>
+                <li><a href="">konkurence</a></li>            
+            </ul>
+        </div>
+        
+        <ul>
+            <li>Zakladní kapitál firmy se dne 28.12.2011 změnil na 1 234 000 Kč.</li>
+            <li>U Slevomat.cz, s.r.o. přibyl dne 28.12.2011 nový společník s s vkladem 170 000 Kč.</li>
+            <li>U Slevomat.cz, s.r.o. přibyl dne 28.12.2011 nový společník s s vkladem 202 000 Kč.</li>
+        
+        </ul>
+        
+	</div>
+	<div data-role="footer">
+		<a href="#login">Login</a>
+	</div>
+</div>
+
+
   </body>
 </html>
