@@ -1,9 +1,30 @@
-.ui-input-search {
-    margin: 15px 15px 0px;
+* {
+    margin: 0;
+    padding: 0;
 }
-.center input {
-    margin: auto;
+
+html, body, .container {
+    height: 100%;
 }
-.logo {
-    margin: 10px -10px 0 10px;
-    float: left
+
+body {
+    overflow: hidden;
+}
+.page {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    float:left;
+    display: none;
+    top: 0;
+    left: 0;
+}
+.page.page-active {
+    display: block;
+}
+#login {
+    background-color: #F06;
+}
+#registration {
+    background-color: #6F0;
+}
